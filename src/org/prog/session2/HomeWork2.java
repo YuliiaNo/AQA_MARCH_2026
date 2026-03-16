@@ -9,6 +9,7 @@ package org.prog.session2;
 public class HomeWork2 {
 
     public static void main(String[] args) {
+
         String[] emails = new String[]{
                 "abcd@gmail.com",
                 "john.doe@gmail.com",
@@ -20,5 +21,22 @@ public class HomeWork2 {
                 "abcdedfg@x.com",
                 "abcdedfg@xzfgdasd.com"
         };
+
+        for (int i = 0; i < emails.length; i++) {
+
+            String email = emails[i];
+
+            int atIndex = email.indexOf("@");
+            int lastAtIndex = email.lastIndexOf("@");
+            int dotIndex = email.indexOf(".", atIndex);
+
+            if (atIndex == lastAtIndex &&
+                    atIndex >= 3 &&
+                    dotIndex - atIndex > 3 &&
+                    dotIndex != -1) {
+
+                System.out.println(email);
+            }
+        }
     }
 }

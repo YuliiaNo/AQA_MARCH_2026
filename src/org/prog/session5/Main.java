@@ -7,30 +7,49 @@ import org.prog.session5.inheritance.Car;
 //TODO: Android unlocks by fingerprint Apple unlocks by faceId
 //TODO: write method that accepts IPhone and executes unlock() and call();
 
+
+interface IPhone {
+
+    void call();
+
+    void unlock();
+}
+
+class Android implements IPhone {
+
+    public void call() {
+        System.out.println("Android calling...");
+    }
+
+    public void unlock() {
+        System.out.println("Android unlocked by fingerprint");
+    }
+}
+
+class Apple implements IPhone {
+
+    public void call() {
+        System.out.println("Apple calling...");
+    }
+
+    public void unlock() {
+        System.out.println("Apple unlocked by faceId");
+    }
+}
+
 public class Main {
 
-    /**
-     * #############################
-     * #############################
-     * ###########(String.s)########
-     * #############################
-     * #############################
-     * #########[ints]##############
-     * #############################
-     * ###############1#############
-     */
-
-    private static final String s = "s";
-    private static final int i = 1;
-    private static final int[] ints = new int[3];
-    private static final Car car = new Car("");
-
     public static void main(String[] args) {
-        ints[0] = 10;
-        ints[1] = 20;
-        ints[2] = 30;
-        ints[0] = -100;
 
-        car.color = "asd";
+        Android android = new Android();
+        Apple apple = new Apple();
+
+        phoneActions(android);
+        phoneActions(apple);
+    }
+
+    public static void phoneActions(IPhone iPhone) {
+        iPhone.unlock();
+        iPhone.call();
     }
 }

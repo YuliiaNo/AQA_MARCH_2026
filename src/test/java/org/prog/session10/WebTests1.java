@@ -34,13 +34,18 @@ public class WebTests1 {
     @Test
     public void myWebTest1() throws InterruptedException {
 
-        //  go to allo.ua
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+        // go to allo.ua
         alloPage.load();
-        Thread.sleep(2000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("q")));
+
 
         // search iphone
         alloPage.search("iphone");
-        Thread.sleep(3000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//div[contains(@class,'product-card')]")
+        ));
 
         //  get products
         List<WebElement> products = alloPage.getProducts();

@@ -24,7 +24,7 @@ public class WebTests1 {
 
         driver = new ChromeDriver(options);
 
-        // ✅ maximize window
+        // maximize window
         driver.manage().window().maximize();
 
         alloPage = new AlloPage(driver);

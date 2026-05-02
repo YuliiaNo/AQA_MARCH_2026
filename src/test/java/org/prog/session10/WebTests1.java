@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
+
 public class WebTests1 {
 
     private WebDriver driver;
@@ -33,7 +34,7 @@ public class WebTests1 {
     @Test
     public void myWebTest1() throws InterruptedException {
 
-        // go to allo.ua
+        //  go to allo.ua
         alloPage.load();
         Thread.sleep(2000);
 
@@ -41,7 +42,7 @@ public class WebTests1 {
         alloPage.search("iphone");
         Thread.sleep(3000);
 
-        // get products
+        //  get products
         List<WebElement> products = alloPage.getProducts();
 
         Assert.assertTrue(products.size() >= 3, "Less than 3 products!");

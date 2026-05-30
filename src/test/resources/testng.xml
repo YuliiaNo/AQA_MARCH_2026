@@ -3,7 +3,10 @@
 <suite name="Suite1" verbose="1">
     <test name="tests pack 1">
         <classes>
-            <class name="org.prog.session14.CucumberRunner"/>
+            <class name="org.prog.session16.codedriven.CodeDrivenTests"/>
         </classes>
     </test>
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
 </suite>
